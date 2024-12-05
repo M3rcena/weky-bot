@@ -162,5 +162,22 @@ export default {
                 }
             });
         }
+
+        if (message.content.startsWith('w!fight')) {
+            const opponent = message.mentions.users.first();
+            if (!opponent) return message.reply({
+                content: "Please mention a user to fight with",
+            });
+
+            return await client.WekyManager.createFight({
+                interaction: message,
+                client: client,
+                opponent: opponent,
+                embed: {
+                    title: `Fight | M3rcena Development`,
+                    color: 'Blurple',
+                }
+            });
+        }
     }
 }
