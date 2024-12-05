@@ -4,7 +4,7 @@ import { ExtendedClient } from "../..";
 
 export default {
     data: new SlashCommandBuilder()
-        .setName('fasttype')
+        .setName('fight')
         .setDescription('Fight with someone')
         .addUserOption(option => option.setName('whom').setDescription('Whom to fight with?').setRequired(true)),
     async execute(interaction: ChatInputCommandInteraction, client: ExtendedClient) {
